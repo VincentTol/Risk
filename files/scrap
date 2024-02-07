@@ -1,0 +1,57 @@
+    /*
+    //Button for No
+    sf::RectangleShape nButton(sf::Vector2f(width, height));
+    nButton.setFillColor(sf::Color::Red);
+    nButton.setPosition(centerX(470, width), centerY(400,height));
+    //Create text for No
+    sf::Vector2f positionN = nButton.getPosition();
+    sf::Text noText;
+    noText.setString("No");
+    noText.setCharacterSize(24);
+    noText.setFillColor(sf::Color::Black);
+    noText.setFont(font);
+    noText.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    setText(noText,positionN.x + 50, positionN.y + 25);
+
+    goes into the
+      //n button relocating
+            if((sf::Mouse::isButtonPressed(sf::Mouse::Left))){
+                sf::FloatRect bounds = nButton.getGlobalBounds();
+                if(bounds.contains(mouse)){
+                    randomNum = rand() % 801;
+                    width = randomNum;
+                    randomNum = rand() % 801;
+                    height =  rand() % 801;
+                    nButton.setPosition(width, height);
+
+                    sf::Vector2f positionN = nButton.getPosition();
+                    setText(noText,positionN.x + 50, positionN.y + 25);
+                }
+            }
+     */
+
+
+      //random
+         srand(time(0));
+         float randomNum = 0.f;
+
+
+    //attempt at making an outline sprite but its off center
+
+
+    sf::Sprite tempSprite;
+                        tempSprite.setTexture(*i->getTexture());
+
+                        // Set the outline thickness
+                        float outlineThickness = 2.0f;
+
+                        // Set the outline color
+                        tempSprite.setColor(sf::Color::Black);
+
+                        // Scale the outline sprite to make it slightly larger
+                        tempSprite.setScale(1.0f + 2 * outlineThickness / i->getLocalBounds().width,
+                                            1.0f + 2 * outlineThickness / i->getLocalBounds().height);
+
+                        tempSprite.setPosition(i->getPosition());
+
+                        gameWindow.draw(tempSprite);
